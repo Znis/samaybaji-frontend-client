@@ -1,0 +1,459 @@
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu, summary {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+  display: none;
+}
+
+:root {
+  --brown: #a46942;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  background: #444;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--brown);
+  border-radius: 5px;
+}
+*::-moz-selection {
+  background: var(--brown);
+  color: #fff;
+}
+*::selection {
+  background: var(--brown);
+  color: #fff;
+}
+
+p {
+  text-transform: none;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  word-spacing: -0.12rem;
+}
+
+h1,
+h4,
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 1rem 10%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 5rem;
+  background: #fff;
+  padding: 1rem 10%;
+  box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo img {
+  height: 3rem;
+}
+header .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+header .navbar ul li {
+  margin-left: 3rem;
+}
+header .navbar ul li:hover {
+  transition: transform 0.2s;
+  transform: scale(1.3);
+  color: var(--brown);
+}
+header .navbar ul li a {
+  font-size: 1.2rem;
+  color: #666;
+}
+header .navbar ul li a:hover {
+  color: var(--brown);
+}
+header .navbar ul li a.active {
+  color: var(--brown);
+}
+header .navbar ul .btn {
+  margin: 0rem 0rem 0rem 3rem;
+  padding: 0.5rem 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+header .navbar ul .btn:hover {
+  color: #000000;
+}
+
+.content {
+  margin-top: 5rem;
+}
+
+footer {
+  margin: 1rem 2rem 0rem 2rem;
+  padding: 1rem 2rem 0rem 2rem;
+  border-top: 0.2rem solid var(--brown);
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box {
+  margin: 2rem;
+}
+.box h3 {
+  font-size: 1.6rem;
+  color: #444;
+  padding: 1rem 0;
+  font-weight: normal;
+}
+.box p {
+  font-size: 1.1rem;
+  color: #444;
+  padding: 1rem 0;
+}
+.box a {
+  font-size: 1.1rem;
+  color: #444;
+  padding: 1rem 0;
+  display: block;
+}
+.box a:hover {
+  color: var(--brown);
+}
+
+.credit {
+  font-size: 1.4rem;
+  text-align: center;
+  border-top: 0.2rem solid rgba(255, 255, 255, 0.7);
+  padding: 2rem 1rem;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  color: #444;
+}
+.credit span {
+  color: var(--brown);
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.home::before {
+  top: -7rem;
+  background: #fff;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+.home::before, .home::after {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  right: -25rem;
+  border-radius: 3rem;
+  transform: rotate(-28deg);
+  height: 22rem;
+  width: 60rem;
+  animation: animte 1s linear 1;
+}
+.home .home-content {
+  flex: 1 1 60%;
+  padding-bottom: 2rem;
+}
+.home .home-content h3 {
+  color: #333;
+  font-size: 4rem;
+}
+.home .home-content p {
+  padding: 2rem 0;
+  color: #666;
+  font-size: 1.4rem;
+}
+.home .image {
+  display: flex;
+  flex: 1 1 40%;
+  justify-content: center;
+}
+.home .image img {
+  max-width: 25rem;
+  max-height: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@keyframes animte {
+  0% {
+    transform: rotate(32deg) translateY(-40rem);
+  }
+}
+.menu {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/images/popular-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.menu .heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+}
+.menu .heading span {
+  color: var(--brown);
+}
+.menu .box-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 1rem 0;
+  box-shadow: 28px 0px 20px -20px var(--brown);
+  border-radius: 20px;
+  overflow-x: auto;
+}
+
+.btn {
+  font-size: 1.1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5rem;
+  margin-top: 1rem;
+  background: none;
+  color: #222;
+  cursor: pointer;
+  border: 0.2rem solid var(--brown);
+}
+.btn:hover:enabled {
+  background: var(--brown);
+  color: #000000;
+}
+.btn:disabled {
+  color: var(--brown);
+}
+
+.menu-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #fff;
+  min-width: 22rem;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+.menu-item-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.menu-item-card img {
+  height: 55%;
+  max-height: 14rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.menu-item-card h3 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: normal;
+}
+.menu-item-card .price {
+  color: #666;
+  font-size: 1.5rem;
+}
+.menu-item-card .quantity {
+  color: rgb(129, 127, 127);
+  font-size: 1rem;
+}
+
+.ribbon {
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before, .ribbon::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border: 0.5rem solid var(--brown);
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 13.5rem;
+  padding: 0.5rem 0;
+  background-color: var(--brown);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 0.7rem "Roboto", sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before, .ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: -6px;
+  right: 27px;
+}
+.ribbon-top-left::after {
+  bottom: 27px;
+  left: -6px;
+}
+.ribbon-top-left span {
+  right: -25px;
+  top: 20px;
+  transform: rotate(-45deg);
+}
