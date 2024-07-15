@@ -1,11 +1,11 @@
-import MenuItem from "../../../../components/menuItem/menuItem";
+import MenuItem from "../../../components/menuItem";
 
 export default class Menu{
     url: string;
     elemClassName: string;
     element: HTMLElement;
     constructor(){
-        this.url = './pages/landingPage/section/menu/menu.html';
+        this.url = './templates/pages/landingPage/section/menu.html';
         this.elemClassName = 'menu';
         this.element = document.getElementsByClassName(this.elemClassName)[0] as HTMLElement;
 

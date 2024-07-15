@@ -60,8 +60,7 @@ textarea {
 /* minimum style to allow to style meter element */
 meter {
   -webkit-appearance: revert;
-  -moz-appearance: revert;
-       appearance: revert;
+  appearance: revert;
 }
 
 /* preformatted text - use only for this feature */
@@ -71,9 +70,6 @@ meter {
 }
 
 /* reset default text opacity of input placeholder */
-::-moz-placeholder {
-  color: unset;
-}
 ::placeholder {
   color: unset;
 }
@@ -137,10 +133,6 @@ meter {
 *::-webkit-scrollbar-thumb {
   background: var(--brown);
   border-radius: 5px;
-}
-*::-moz-selection {
-  background: var(--brown);
-  color: #fff;
 }
 *::selection {
   background: var(--brown);
@@ -321,8 +313,7 @@ footer {
 .home .image img {
   max-width: 25rem;
   max-height: 25rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @keyframes animte {
@@ -352,6 +343,141 @@ footer {
   box-shadow: 28px 0px 20px -20px var(--brown);
   border-radius: 20px;
   overflow-x: auto;
+}
+
+.about {
+  display: flex;
+  background-color: rgb(252, 252, 252);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about .image-stack {
+  position: relative;
+  flex: 1 1 27rem;
+  height: 30rem;
+}
+.about .image-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.about .image-bottom {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.about .content {
+  flex: 1 1 40rem;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.about .content h3 {
+  font-size: 4rem;
+  color: #333;
+}
+.about .content p {
+  font-size: 1.6rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(252, 252, 252);
+}
+.feedback h3 {
+  color: #333;
+  font-size: 4rem;
+}
+.feedback form {
+  background: #fff;
+}
+.feedback form .row {
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.feedback form .row .container {
+  display: flex;
+  flex: 1 1 50%;
+  flex-direction: column;
+}
+.feedback form .inputbox {
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #333;
+  text-transform: none;
+  background: #f0f0f0;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.feedback form .box::placeholder {
+  text-transform: capitalize;
+}
+.feedback form .message {
+  resize: none;
+}
+
+.download-app {
+  display: flex;
+  background: rgb(252, 252, 252);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid red;
+}
+.download-app h3 {
+  font-size: 3rem;
+  margin: auto;
+  color: #333;
+}
+.download-app p {
+  font-size: 1.4rem;
+  margin: auto;
+  color: #555;
+  padding: 1rem 0;
+}
+.download-app .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1 1 27rem;
+}
+.download-app .box1 {
+  padding: 2rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.download-app .box-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.download-app .box-container .box {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+.download-app .box-container .box img {
+  flex: 1 1 50%;
+  height: 4rem;
 }
 
 .btn {
@@ -393,8 +519,7 @@ footer {
   height: 55%;
   max-height: 14rem;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .menu-item-card h3 {
   color: #333;

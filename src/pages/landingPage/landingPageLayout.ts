@@ -1,5 +1,8 @@
-import Home from "./section/home/home";
-import Menu from "./section/menu/menu";
+import Home from "./section/home";
+import Menu from "./section/menu";
+import About from "./section/about";
+import Feedback from "./section/feedback";
+import DownloadApp from "./section/downloadApp";
 
 export default class LandingPage{
     element: HTMLElement;
@@ -27,6 +30,10 @@ export default class LandingPage{
 
         new Home();
         new Menu();
+        new About();
+        new Feedback();
+        new DownloadApp();
+ 
 
         }
 

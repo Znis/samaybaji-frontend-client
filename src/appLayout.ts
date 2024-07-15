@@ -1,6 +1,6 @@
-import Footer from "../public/sections/footer/footer";
-import Header from "../public/sections/header/header";
-import LandingPage from "../public/pages/landingPage/landingPage";
+import Footer from "./sections/footer";
+import Header from "./sections/header";
+import LandingPage from "./pages/landingPage/landingPageLayout";
 
 export default class AppLayout {
     constructor() {

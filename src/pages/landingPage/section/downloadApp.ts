@@ -1,11 +1,11 @@
-export default class Header{
+export default class DownloadApp{
     url: string;
-    elemTagName: string;
+    elemClassName: string;
     element: HTMLElement;
     constructor(){
-        this.url = './sections/header/header.html';
-        this.elemTagName = 'header';
-        this.element = document.getElementsByTagName(this.elemTagName)[0] as HTMLElement;
+        this.url = './templates/pages/landingPage/section/downloadApp.html';
+        this.elemClassName = 'download-app';
+        this.element = document.getElementsByClassName(this.elemClassName)[0] as HTMLElement;
 
         this.init();
     }

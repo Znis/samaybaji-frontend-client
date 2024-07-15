@@ -1,10 +1,10 @@
-export default class Home{
+export default class Feedback{
     url: string;
     elemClassName: string;
     element: HTMLElement;
     constructor(){
-        this.url = './pages/landingPage/section/home/home.html';
-        this.elemClassName = 'home';
+        this.url = './templates/pages/landingPage/section/feedback.html';
+        this.elemClassName = 'feedback';
         this.element = document.getElementsByClassName(this.elemClassName)[0] as HTMLElement;
 
         this.init();

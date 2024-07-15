@@ -1,10 +1,10 @@
-export default class Footer{
+export default class Header{
     url: string;
     elemTagName: string;
     element: HTMLElement;
     constructor(){
-        this.url = './sections/footer/footer.html';
-        this.elemTagName = 'footer';
+        this.url = './templates/sections/header.html';
+        this.elemTagName = 'header';
         this.element = document.getElementsByTagName(this.elemTagName)[0] as HTMLElement;
 
         this.init();
