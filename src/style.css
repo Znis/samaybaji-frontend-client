@@ -60,7 +60,8 @@ textarea {
 /* minimum style to allow to style meter element */
 meter {
   -webkit-appearance: revert;
-  appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
 }
 
 /* preformatted text - use only for this feature */
@@ -70,6 +71,9 @@ meter {
 }
 
 /* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
 ::placeholder {
   color: unset;
 }
@@ -134,6 +138,10 @@ meter {
   background: var(--brown);
   border-radius: 5px;
 }
+*::-moz-selection {
+  background: var(--brown);
+  color: #fff;
+}
 *::selection {
   background: var(--brown);
   color: #fff;
@@ -162,8 +170,8 @@ body {
 }
 
 section {
-  min-height: 100vh;
-  padding: 1rem 10%;
+  width: 100%;
+  padding: 5rem 4%;
 }
 
 header {
@@ -298,12 +306,12 @@ footer {
 }
 .home .home-content h3 {
   color: #333;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .home .home-content p {
   padding: 2rem 0;
   color: #666;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .home .image {
   display: flex;
@@ -313,7 +321,8 @@ footer {
 .home .image img {
   max-width: 25rem;
   max-height: 25rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @keyframes animte {
@@ -363,7 +372,8 @@ footer {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about .image-bottom {
   position: relative;
@@ -371,7 +381,8 @@ footer {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .about .content {
   flex: 1 1 40rem;
@@ -380,11 +391,11 @@ footer {
   align-items: center;
 }
 .about .content h3 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #333;
 }
 .about .content p {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #666;
   padding: 1rem 0;
 }
@@ -396,7 +407,7 @@ footer {
 }
 .feedback h3 {
   color: #333;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .feedback form {
   background: #fff;
@@ -415,14 +426,24 @@ footer {
   flex-direction: column;
 }
 .feedback form .inputbox {
-  padding: 1rem;
-  margin: 1rem 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #333;
   text-transform: none;
   background: #f0f0f0;
   width: 100%;
   border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0rem 1.5rem 0rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.feedback form .inputbox:focus {
+  border: 1px solid #333;
+}
+.feedback form .box::-moz-placeholder {
+  text-transform: capitalize;
 }
 .feedback form .box::placeholder {
   text-transform: capitalize;
@@ -437,7 +458,6 @@ footer {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid red;
 }
 .download-app h3 {
   font-size: 3rem;
@@ -445,7 +465,7 @@ footer {
   color: #333;
 }
 .download-app p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: auto;
   color: #555;
   padding: 1rem 0;
@@ -458,7 +478,6 @@ footer {
   flex: 1 1 27rem;
 }
 .download-app .box1 {
-  padding: 2rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -469,15 +488,94 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 .download-app .box-container .box {
   margin: auto;
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 }
 .download-app .box-container .box img {
   flex: 1 1 50%;
   height: 4rem;
+}
+
+.order-page-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  padding: 4rem 2rem 6.4rem 2rem;
+  overflow: auto;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/images/popular-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.restaurant .title-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.restaurant .menu-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.restaurant .heading {
+  text-align: center;
+  font-size: 3rem;
+  padding: 0 0.5rem;
+  color: #333;
+}
+.restaurant .heading span {
+  color: var(--brown);
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.cart__heading {
+  font-size: 3rem;
+  color: #333;
+}
+.cart__span {
+  color: var(--brown);
+}
+.cart__main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2rem;
+}
+.cart__container {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+.cart__total-amount-container {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  background-color: #f0f0f0;
 }
 
 .btn {
@@ -487,6 +585,7 @@ footer {
   margin-top: 1rem;
   background: none;
   color: #222;
+  text-align: center;
   cursor: pointer;
   border: 0.2rem solid var(--brown);
 }
@@ -503,7 +602,7 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
   background: #fff;
-  min-width: 22rem;
+  width: 22rem;
   padding: 2rem;
   margin: 2rem;
   border-radius: 1rem;
@@ -519,7 +618,8 @@ footer {
   height: 55%;
   max-height: 14rem;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .menu-item-card h3 {
   color: #333;

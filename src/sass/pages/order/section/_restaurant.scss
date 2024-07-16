@@ -1,0 +1,38 @@
+.restaurant {  
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./assets/images/popular-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .title-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .menu-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 3rem;
+    padding: 0 0.5rem;
+    color: #333;
+    
+    span {
+      color: var(--brown);
+    }
+  }
+}
+
+

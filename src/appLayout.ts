@@ -1,6 +1,8 @@
 import Footer from "./sections/footer";
 import Header from "./sections/header";
 import LandingPage from "./pages/landingPage/landingPageLayout";
+import OrderPage from "./pages/order/orderPageLayout";
+import Cart from "./pages/cart/cart";
 
 export default class AppLayout {
     constructor() {
@@ -18,7 +20,9 @@ export default class AppLayout {
             
 
             new Header();
-            new LandingPage();
+            // new LandingPage();
+            // new OrderPage();
+            new Cart();
             new Footer();
 
         }
