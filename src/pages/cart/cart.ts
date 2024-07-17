@@ -1,3 +1,5 @@
+import CartItem from "../../components/cartItem";
+
 export default class Cart{
     url: string;
     element: HTMLElement;
@@ -14,6 +16,9 @@ export default class Cart{
         .then(response => response.text())
         .then(html => {
             this.element!.innerHTML = html;
+            for(let i=0; i<5; i++){
+                this.element.getElementsByClassName("cart__container")[i].appendChild(new CartItem().element);
+            }
         });
     }
     }
