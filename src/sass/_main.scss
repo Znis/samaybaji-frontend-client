@@ -1,0 +1,30 @@
+@import "./base/reset";
+@import "./base/base";
+
+//app layout section
+@import "./section/header";
+@import "./section/content";
+@import "./section/footer";
+
+//pages
+//landing page
+@import "./pages/landingPage/section/home";
+@import "./pages/landingPage/section/menu";
+@import "./pages/landingPage/section/about";
+@import "./pages/landingPage/section/feedback";
+@import "./pages/landingPage/section/downloadApp";
+//order
+@import "./pages/order/order";
+@import "./pages/order/section/restaurant";
+//cart
+@import "./pages/cart/cart";
+//productDetail
+@import "./pages/productDetail/section/upper";
+@import "./pages/productDetail/section/below";
+
+//components
+@import "./components/button";
+@import "./components/menuItem";
+@import "./components/cartItem";
+@import "./components/customerReview";
+@import "./components/rating";

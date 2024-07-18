@@ -1,0 +1,46 @@
+.product-below{
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-top: 2rem;
+    gap: 2rem;
+    
+    &__navbar-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__horizontal-line{
+        border-bottom: 1px solid #555;
+        width: 36%;
+    }
+    &__navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28%;
+        border: 1px solid #555;
+        padding: 1rem 2rem; 
+        gap: 3rem;
+    }
+    &__navbar-link{
+        font-size: 1.2rem;
+        color: #555;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover{
+            color: #111;
+        }
+        &--active{
+            color: #111;
+            text-decoration: underline;
+        }
+    }
+    &__customer-reviews{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+}
