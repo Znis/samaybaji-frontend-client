@@ -23,10 +23,18 @@ export default class AppLayout {
             
 
             new Header();
+
+
+
+
             // new LandingPage();
             // new OrderPage();
             // new Cart();
             new ProductDetailLayout();
+
+
+
+
             new Footer();
 
         }

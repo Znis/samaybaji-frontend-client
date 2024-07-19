@@ -6,19 +6,30 @@
       <h1 class="auth-card__heading">Register</h1>
       <form class="auth-card__form-content" autocomplete="off">
         <input class="auth-card__input" type="text" placeholder="Username" />
-        <input class="auth-card__input" type="email" placeholder="Email" />
+        <input
+          type="email"
+          maxlength="50"
+          name="email-field"
+          id="email-field"
+          placeholder="Email"
+          class="auth-card__input"
+          required
+        />
         <input
           class="auth-card__input"
           type="password"
           placeholder="Password"
+          pattern="(.{8,})"
+          title="Must contain at least 8 or more characters" required
         />
         <input
           class="auth-card__input"
           type="password"
           placeholder="Confirm Password"
+          required
         />
         <button class="auth-card__button auth-card__button--submit">
-          Create Account
+          Register
         </button>
       </form>
     </div>
@@ -28,11 +39,21 @@
         class="auth-card__form-content auth-card__form-content--padded"
         autocomplete="off"
       >
-        <input class="auth-card__input" type="text" placeholder="Username" />
+        <input
+          type="email"
+          maxlength="50"
+          name="email-field"
+          id="email-field"
+          placeholder="Email"
+          class="auth-card__input"
+          required
+        />
         <input
           class="auth-card__input"
           type="password"
           placeholder="Password"
+          pattern="(.{8,})"
+          title="Must contain at least 8 or more characters" required
         />
         <div class="auth-card__checkbox">
           <input
@@ -44,21 +65,29 @@
             >Remember me</label
           >
         </div>
+        <p class="auth-card__forgot-password">Forgot Password?</p>
         <button class="auth-card__button auth-card__button--submit">
           Login
         </button>
       </form>
+      <div class="auth-card__divider">
+        <div class="auth-card__horizontal-line"></div>
+        <p class="auth-card__divider-text">OR</p>
+        <div class="auth-card__horizontal-line"></div>
+      </div>
+      <div class="auth-card__other-login-methods">
+        <i class="fa-brands fa-google auth-card__icon"></i>
+        <i class="fa-brands fa-facebook auth-card__icon"></i>
+    </div>
     </div>
   </div>
   <div class="auth-card__sidebox auth-card__sidebox--left">
-    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo-name">
-      <img
-        class="auth-card__image"
-        src="/assets/images/logo-text.png"
-        alt=""
-      />
+    <figure
+      class="auth-card__image-wrapper"
+    >
+      <img class="auth-card__image" src="/assets/images/logo-text.png" alt="" />
     </figure>
-    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo">
+    <figure class="auth-card__image-wrapper">
       <img
         class="auth-card__image"
         src="/assets/images/title-logo.png"
@@ -71,14 +100,12 @@
     </button>
   </div>
   <div class="auth-card__sidebox auth-card__sidebox--right">
-    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo-name">
-      <img
-        class="auth-card__image"
-        src="/assets/images/logo-text.png"
-        alt=""
-      />
+    <figure
+      class="auth-card__image-wrapper"
+    >
+      <img class="auth-card__image" src="/assets/images/logo-text.png" alt="" />
     </figure>
-    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo">
+    <figure class="auth-card__image-wrapper">
       <img
         class="auth-card__image"
         src="/assets/images/title-logo.png"

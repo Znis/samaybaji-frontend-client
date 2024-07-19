@@ -1,14 +1,14 @@
-$gray: #8E9AAF;
-$lavender: #CBC0D3;
-$pale: #F5DEB3;
+$gray: #8e9aaf;
+$lavender: #cbc0d3;
+$pale: #f5deb3;
 $white: #f6f6f6;
 
 $primary: var(--brown);
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
 
-$sans-serif: 'Open Sans', sans-serif;
-$serif: 'Lora', serif;
+$sans-serif: "Open Sans", sans-serif;
+$serif: "Lora", serif;
 
 .auth-card {
   background: $lavender;
@@ -18,15 +18,20 @@ $serif: 'Lora', serif;
   height: 100vh;
 
   &__container {
+    display: flex;
     background: $white;
     width: 50%;
     height: 80%;
     position: absolute;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   }
 
   &__active-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: -5%;
     left: 5%;
@@ -34,19 +39,71 @@ $serif: 'Lora', serif;
     width: 50%;
     height: 110%;
     border-radius: 5px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, .1);
-    transition: all .5s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
     z-index: 2;
   }
 
   &__form--hidden {
     display: none;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
+  &__form--signin, &__form--signup {
+    gap: 2rem;
+  }
+
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  &__horizontal-line {
+    border-bottom: 1px solid #555;
+    width: 40%;
+  }
+  &__divider-text {
+    font-size: 0.8rem;
+    font-variant: capitalized;
+    color: #555;
+    padding: 0 0.5rem;
+  }
+  &__other-login-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  &__icon {
+    color: $primary;
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover{
+      scale: 1.1;
+    }
+  }
+  &__forgot-password {
+    font-family: $sans-serif;
+    color: $primary;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-align: right;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+  }
+}
   &__sidebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 50%;
+    height: 100%;
     transition: 1s all ease;
 
     &--left {
@@ -68,9 +125,8 @@ $serif: 'Lora', serif;
     letter-spacing: 8px;
   }
 
-
   &__account {
-    margin-top: 85%;
+
     padding: 1rem;
     font-family: $sans-serif;
     font-size: 0.8rem;
@@ -80,27 +136,21 @@ $serif: 'Lora', serif;
   }
 
   &__image-wrapper {
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 8rem;
-    left: 30%;
-    opacity: .7;
-
-    &--logo-name{
-      top: 30%;
-    }
-    &--logo{
-      top: 45%;
-    }
-
+    opacity: 0.7;
   }
-  &__image{
+  &__image {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
   }
 
   button {
-    padding: 12px;
+    max-width: 8rem;
+    text-align: center;
     font-family: $sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -108,6 +158,8 @@ $serif: 'Lora', serif;
     border-radius: 10px;
     outline: none;
     display: block;
+    padding: 0.8rem;
+    margin: 1rem 0;
     cursor: pointer;
 
     &:hover {
@@ -123,8 +175,8 @@ $serif: 'Lora', serif;
     border: solid 1px $pale;
 
     &--submit {
-      padding: 12px;
       border-color: $primary;
+      align-self: center;
 
       &:hover {
         background: $lavender;
@@ -136,80 +188,52 @@ $serif: 'Lora', serif;
       background: $white;
       color: $primary;
       border: solid 1px $pale;
-      margin-left: 34%;
     }
   }
 
   &__form-content {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding-top: 7px;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    gap: 1rem;
 
-    &--padded {
-      padding-top: 35px;
-
-      input {
-        padding: 12px;
-      }
-
-      .auth-card__button--submit {
-        margin-top: 45px;
-      }
-    }
   }
 
   &__input {
     background: $pale;
-    width: 65%;
-    color: $primary;
-    border: none;
-    border-bottom: 1px solid rgba($white, 0.5);
-    padding: 9px;
-    margin: 7px;
-
-    &::placeholder {
-      color: rgba($white, 1);
-      letter-spacing: 2px;
-      font-size: 1.3em;
-      font-weight: 100;
-    }
+    font-size: 1rem;
+    color: #333;
+    text-transform: none;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 
     &:focus {
-      color: $primary;
-      outline: none;
-      border-bottom: 1.2px solid rgba($primary, 0.7);
-      font-size: 1em;
-      transition: .8s all ease;
+      border: 1px solid #333;
+    }
 
-      &::placeholder {
-        opacity: 0;
-      }
+    &::placeholder {
+      color: #888;
+      font-size: 0.8rem;
+      font-weight: 100;
     }
   }
 
   &__checkbox {
-    display: inline;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     white-space: nowrap;
     position: relative;
-    left: -62px;
-    top: 5px;
-
-    &-input {
-      width: 7px;
-      background: $primary;
-    }
-
-    &-label {
+  }
+  &__checkbox-label {
       font-family: $sans-serif;
       color: $primary;
       font-size: 0.8em;
       letter-spacing: 1px;
-    }
-
-    input[type="checkbox"]:checked + &-label {
-      color: $primary;
-      transition: .5s all ease;
-    }
-  }
+}
 }

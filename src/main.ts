@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 import AppLayout from './appLayout';
 
 const appLayout = new AppLayout();
