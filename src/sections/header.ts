@@ -1,3 +1,6 @@
+import LoginCard from "../components/authCard";
+import Modal from "../components/modal";
+
 export default class Header{
     url: string;
     elemTagName: string;
@@ -16,6 +19,10 @@ export default class Header{
         .then(response => response.text())
         .then(html => {
             this.element!.innerHTML = html;
+            document.getElementById("login")?.addEventListener("click", () => {
+                Modal.toggle();
+                document.getElementsByClassName('modal')[0].appendChild(new LoginCard().element);
+            });
         });
     }
     }

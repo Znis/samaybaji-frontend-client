@@ -1,0 +1,93 @@
+<div class="auth-card__container">
+  <div class="auth-card__active-box">
+    <div
+      class="auth-card__form auth-card__form--signup auth-card__form--hidden"
+    >
+      <h1 class="auth-card__heading">Register</h1>
+      <form class="auth-card__form-content" autocomplete="off">
+        <input class="auth-card__input" type="text" placeholder="Username" />
+        <input class="auth-card__input" type="email" placeholder="Email" />
+        <input
+          class="auth-card__input"
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          class="auth-card__input"
+          type="password"
+          placeholder="Confirm Password"
+        />
+        <button class="auth-card__button auth-card__button--submit">
+          Create Account
+        </button>
+      </form>
+    </div>
+    <div class="auth-card__form auth-card__form--signin">
+      <h1 class="auth-card__heading">Sign In</h1>
+      <form
+        class="auth-card__form-content auth-card__form-content--padded"
+        autocomplete="off"
+      >
+        <input class="auth-card__input" type="text" placeholder="Username" />
+        <input
+          class="auth-card__input"
+          type="password"
+          placeholder="Password"
+        />
+        <div class="auth-card__checkbox">
+          <input
+            class="auth-card__checkbox-input"
+            type="checkbox"
+            id="remember"
+          />
+          <label class="auth-card__checkbox-label" for="remember"
+            >Remember me</label
+          >
+        </div>
+        <button class="auth-card__button auth-card__button--submit">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="auth-card__sidebox auth-card__sidebox--left">
+    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo-name">
+      <img
+        class="auth-card__image"
+        src="/assets/images/logo-text.png"
+        alt=""
+      />
+    </figure>
+    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo">
+      <img
+        class="auth-card__image"
+        src="/assets/images/title-logo.png"
+        alt=""
+      />
+    </figure>
+    <p class="auth-card__account">Have an account?</p>
+    <button class="auth-card__button auth-card__button--switch" id="signin">
+      Login
+    </button>
+  </div>
+  <div class="auth-card__sidebox auth-card__sidebox--right">
+    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo-name">
+      <img
+        class="auth-card__image"
+        src="/assets/images/logo-text.png"
+        alt=""
+      />
+    </figure>
+    <figure class="auth-card__image-wrapper auth-card__image-wrapper--logo">
+      <img
+        class="auth-card__image"
+        src="/assets/images/title-logo.png"
+        alt=""
+      />
+    </figure>
+    <p class="auth-card__account">Don't have an account?</p>
+    <button class="auth-card__button auth-card__button--switch" id="signup">
+      Sign Up
+    </button>
+  </div>
+</div>

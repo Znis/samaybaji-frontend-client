@@ -13,6 +13,8 @@ export default class AppLayout {
         const app = document.getElementById('app');
         if (app) {
             app.innerHTML = `
+                <div class="background" id="modal-background"></div>
+                <div class="modal"></div>
                 <header></header>
                 <div class="content"></div>
                 <footer></footer>
