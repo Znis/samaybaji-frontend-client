@@ -11,7 +11,7 @@
         justify-content: center;
     }
     &__horizontal-line{
-        border-bottom: 1px solid #555;
+        border-bottom: 1px solid #888;
         width: 36%;
     }
     &__navbar{
@@ -19,7 +19,8 @@
         align-items: center;
         justify-content: center;
         width: 28%;
-        border: 1px solid #555;
+        border: 1px solid #888;
+        border-radius: 4px;
         padding: 1rem 2rem; 
         gap: 3rem;
     }
@@ -35,6 +36,9 @@
         &--active{
             color: #111;
             text-decoration: underline;
+            text-decoration-color: var(--brown);
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
         }
     }
     &__customer-reviews{

@@ -1,4 +1,4 @@
-import LoginCard from "../components/authCard";
+import AuthCard from "../components/authCard";
 import Modal from "../components/modal";
 
 export default class Header{
@@ -19,9 +19,9 @@ export default class Header{
         .then(response => response.text())
         .then(html => {
             this.element!.innerHTML = html;
-            document.getElementById("login")?.addEventListener("click", () => {
+            document.getElementById("authentication")?.addEventListener("click", () => {
                 Modal.toggle();
-                document.getElementsByClassName('modal')[0].appendChild(new LoginCard().element);
+                document.getElementsByClassName('modal')[0].appendChild(AuthCard.init());
             });
         });
     }
